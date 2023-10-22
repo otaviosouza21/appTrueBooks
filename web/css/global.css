@@ -30,6 +30,8 @@ img{
   justify-content: space-around;
   box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.359);
   flex-wrap: wrap;
+  padding: 5px 0;
+  position: relative;
 }
 
 .logo{
@@ -44,19 +46,19 @@ gap: 20px;
 .header-search{
   display: flex;
   background-color:white;
-  border-radius: 10px;
-  padding: 5px;
+  border-radius: 10px ;
   width: 350px;
+  padding: 5px;
 }
+
 
 .header-search input{
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
   width: 100% ;
-  font-size: 1.1rem ;
-  margin: 0 !important;
-  padding: 0 !important;
+    font-size: 1rem !important;
+    padding: 5px !important;
 }
 
 .header-search img{
@@ -70,32 +72,31 @@ width: 20px;
 }
 
 
-.nav-links li:nth-child(1),.nav-links li:nth-child(2),
-.nav-links li:nth-child(3){
-  border-bottom: solid 2px black;
-}
-
-.nav-links li a:hover{
-  padding-bottom: 15px;
-  transition: 1s;
-}
-
 .nav-links li a{
   font-weight: 600;
+  padding: 5px;
 }
+
+.nav-links li:hover{
+    color: white;
+}
+
 
 .nav-links li img{
   width: 30px;
 }
 
 .container{
-  padding: 0 60px;
+  margin: 0 auto;
   margin-top: 54px;
 }
 
 .title{
   color: #E74C18;
   font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+
 }
 
 .footer{
@@ -130,6 +131,79 @@ display: flex;
 flex-direction: column;
 gap: 2px;
 }
+
+
+.modal-login{
+    position: absolute;
+    background: #E4400B;
+    top: 55px;
+    right: 10px;
+    z-index: 100;
+    padding: 5px 20px 20px 20px;
+    min-width: 350px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    display: none;
+}
+
+.modal-login.active{
+    display: flex;
+}
+
+.login{
+    cursor: pointer
+}
+
+
+.modal-form{
+     display: flex;
+    gap: 5px;
+    flex-direction: column
+}
+
+
+
+.modal-login h4{
+    text-align: center;
+       margin: 0 !important;
+}
+
+.modal-login:before{
+    content: "";
+    display: block;
+   background: transparent;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    z-index: 101;
+    border-bottom: solid 10px #E4400B;
+    border-top:solid 10px transparent;
+    border-left: solid 10px transparent;
+    border-right: solid 10px transparent;
+    top: -20px;
+    right: 150px;
+
+}
+
+.modal-buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.modal-form span{
+    text-decoration: underline;
+    color: purple;
+    cursor: pointer;
+}
+
+.modal-buttons button:last-child{
+  background: #198754;
+  color: white
+}
+
 
 
 

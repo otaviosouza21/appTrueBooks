@@ -1,15 +1,16 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+    <!DOCTYPE html>
+    <!DOCTYPE html>
+    <html>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<!DOCTYPE html>
-<html>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link rel="stylesheet" href="./bootstrap-4.0.0/css/bootstrap.css">
+        <script src="./bootstrap-4.0.0/js/bootstrap.js"></script>
         <link rel="stylesheet" href="./css/global.css">
         <link rel="stylesheet" href="./css/cadastroLivro.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      
         <title>True Books</title>
     </head>
 
@@ -43,7 +44,7 @@
         <main class="home container">
 
             <form method="post" action="SalvarLivro" class="row g-3 formu">
-                <h1>Cadastro de Livro</h1>
+                <h1 class="col-md-12">Cadastro de Livro</h1>
 
                 <div class="form-input col-md-6">
                     <label for="titulo">Titulo</label>
@@ -75,7 +76,7 @@
                     <input placeholder="Quantidade em estoque" class="form-control" type="text" name="quantidade" id="quantidade">
                 </div>
 
-                <div class="col-md-12">
+                <div class="botao col-md-12">
                     <button class="btn btn-success" type="submit" value="SALVAR" name="operacao" id="operacao">Cadastrar</button>
                 </div>
 
@@ -128,5 +129,5 @@
             </nav>
         </footer>
     </body>
-</html>
 
+    </html>
