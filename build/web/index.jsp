@@ -52,7 +52,9 @@
                    <span>Esqueci minha senha</span>
                    <div class="modal-buttons">
                        <button class="btn btn-sucess">Entrar</button>
-                        <button class="btn btn-sucess">Criar Conta</button>
+                        <button class="btn btn-sucess">
+                            <a href="./cadastroUsuario.jsp">Criar Conta</a>
+                        </button>
                    </div>
                </form>
            </div>
