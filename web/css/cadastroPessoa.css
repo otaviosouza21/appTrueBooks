@@ -1,7 +1,7 @@
 .formu{
   background-color: #e74c18da;
 border-radius: 20px;
-padding: 0 40px 40px 40px;
+padding: 26px 40px 40px 40px;
 margin: 20px;
 }
 
@@ -12,4 +12,10 @@ margin: 20px;
 
 .form-input label{
   font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 5px !important;
+}
+
+.botao{
+ margin-top: 16px !important;
 }
