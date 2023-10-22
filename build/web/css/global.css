@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+body{
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+ul,li{
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important ;
+}
+
+a{
+  text-decoration: none !important;
+  color: black !important;
+}
+
+h1,h2,h3,p,body{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+img{
+  width: 100%;
+}
+
+.header{
+  background-color:#E74C18 ;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.359);
+  flex-wrap: wrap;
+}
+
+.logo{
+color: white;
+}
+
+.header-rigth{
+display: flex;
+align-items: center;
+gap: 20px;
+}
+.header-search{
+  display: flex;
+  background-color:white;
+  border-radius: 10px;
+  padding: 5px;
+  width: 350px;
+}
+
+.header-search input{
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  width: 100% ;
+  font-size: 1.1rem ;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.header-search img{
+width: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+
+.nav-links li:nth-child(1),.nav-links li:nth-child(2),
+.nav-links li:nth-child(3){
+  border-bottom: solid 2px black;
+}
+
+.nav-links li a:hover{
+  padding-bottom: 15px;
+  transition: 1s;
+}
+
+.nav-links li a{
+  font-weight: 600;
+}
+
+.nav-links li img{
+  width: 30px;
+}
+
+.container{
+  padding: 0 60px;
+  margin-top: 54px;
+}
+
+.title{
+  color: #E74C18;
+  font-size: 2rem;
+}
+
+.footer{
+  background: #E74C18;
+  display: flex;
+  justify-content: space-around;
+  padding: 16px 400px;
+}
+
+.footer-redes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-redes img{
+  width: 50px;
+}
+
+.footer-nav{
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+}
+
+.footer-nav-list li:first-child{
+  font-weight: bold;
+}
+
+.footer-nav-list{
+display: flex;
+flex-direction: column;
+gap: 2px;
+}
+
+
+
+@media (max-width:875px) {
+  .nav-links{
+    margin-top: 20px;
+    color: white;
+  }
+}
