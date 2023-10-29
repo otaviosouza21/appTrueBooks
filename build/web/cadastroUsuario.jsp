@@ -20,9 +20,16 @@
                     <body>
                     <jsp:include page="header1.jsp"/>
                         <main class="home container">
-                            <a href="./consultaPessoas.jsp">Consultar Cadastros =></a>
+                        
 
                             <form method="post" action="SalvarPessoa" class="row g-3 formu">
+                                    <a style="color:white !important;" 
+                                         href="./consultaPessoas.jsp"
+                                         type="button"
+                                         style="margin-bottom: 16px; font-weight: bold" class="btn btn-primary"
+                                     >
+                                        Consultar Usuarios
+                                     </a>
                                 <h1 class="col-md-12" >Cadastro de Usuário</h1>
 
                                 <div class="form-input col-md-6">

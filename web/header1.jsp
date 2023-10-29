@@ -13,7 +13,7 @@
                             <nav class="nav">
                                 <ul class="nav-links">
                                     <li><a href="./index.jsp">Home</a></li>
-                                    <li><a href="./cadastroLivro.jsp">Livros</a></li>
+                                    <li><a href="./gridLivros.jsp">Livros</a></li>
                                     <li><a href="">Sobre</a></li>
                                     <li>
                                         <a>
@@ -27,21 +27,21 @@
                                     </li>
                                 </ul>
                             </nav>
-           <div class="modal-login">
+           <div class="modal-login animeLeft">
                <h4>Acesse sua Conta</h4>
                <form class="modal-form" >
-                   <div class="">
+                   <div class="modal-inputs">
                        <label for="user">Usuario ou email</label>
                        <input class="form-control" type="text" id="user" name="use"/>
                    </div>
-                      <div class="">
+                      <div class="modal-inputs">
                        <label for="passw">Senha</label>
                        <input class="form-control" type="password" id="passw" name="passw"/>
-                   </div>
+                     </div>
                    <span>Esqueci minha senha</span>
                    <div class="modal-buttons">
-                       <button class="btn btn-sucess">Entrar</button>
-                        <button class="btn btn-sucess">
+                       <button id="entrar" class="btn btn-sucess">Entrar</button>
+                        <button id="cadastrar" class="btn btn-sucess">
                             <a href="./cadastroUsuario.jsp">Criar Conta</a>
                         </button>
                    </div>
