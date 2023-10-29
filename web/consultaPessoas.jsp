@@ -24,9 +24,19 @@
 
     <body>
         <jsp:include page="header1.jsp"/>
-        
-        <section class="consulta">
-    <h1 class="title container">Consulta de Cadastros</h1>
+
+  <section class="consulta container">
+      <div class="header-title">
+      <h1 class="title">Consulta de Cadastros</h1> 
+      <a class="voltar" href="./admPage.jsp">Voltar</a>
+      </div>
+            <a style="color:white !important;" 
+            href="./cadastroUsuario.jsp"
+            type="button"
+             style="margin-bottom: 16px; font-weight: bold" class="btn btn-success"
+            >
+            CADASTRAR NOVO
+            </a>
     <table class="grid">
       <thead class="grid-header">
         <tr>

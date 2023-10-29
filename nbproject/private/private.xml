@@ -3,24 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/web/command/VisualizarCommand.java</file>
             <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/core/util/Conexao.java</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/core/impl/persistencia/LivroDAO.java</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/css/global.css</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/web/command/BuscarCommand.java</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/core/impl/persistencia/PessoaDAO.java</file>
+            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/gridLivros.jsp</file>
+            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/core/interfaces/IFachada.java</file>
+            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/web/viewhelper/LivroVH.java</file>
             <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/consultaLivros.jsp</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/web/command/ConsultarCommand.java</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/cadastroUsuario.jsp</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/css/grid.css</file>
+            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/css/main.css</file>
+            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/domain/EntidadeDominio.java</file>
             <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/web/command/SalvarCommand.java</file>
             <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/domain/Pessoa.java</file>
             <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/cadastroLivro.jsp</file>
+            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/web/interfaces/IViewHelper.java</file>
             <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/index.jsp</file>
             <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/web/servlet/Servlet.java</file>
             <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/src/java/com/aplicacaomodelo/domain/Livro.java</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/img/trash.svg</file>
-            <file>file:/C:/Users/otavi/Downloads/TrueBooks_atualizado/AplicacaoModelo/web/consultaPessoas.jsp</file>
         </group>
     </open-files>
 </project-private>

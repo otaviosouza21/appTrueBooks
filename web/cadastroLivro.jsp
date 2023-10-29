@@ -15,58 +15,16 @@
     </head>
 
     <body>
-         <header class="header">
-                            <div class="header-rigth">
-                                <h1 class="logo">True Books</h1>
-                                <div class="header-search">
-                                    <img src="./img/search.svg" alt="">
-                                    <input type="text" name="" id="" placeholder="busque por qualquer livro">
-                                </div>
-                            </div>
-                            <nav class="nav">
-                                <ul class="nav-links">
-                                    <li><a href="./index.jsp">Home</a></li>
-                                    <li><a href="./cadastroLivro.jsp">Livros</a></li>
-                                    <li><a href="">Sobre</a></li>
-                                    <li>
-                                        <a>
-                                            <img src="./img/cart.svg" alt="Carrinho de Compras" srcset="">
-                                        </a>
-                                    </li>
-                                    <li class="login">
-                                        <a>
-                                            <img src="./img//user.svg" alt="Usuario" srcset="">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-           <div class="modal-login">
-               <h4>Acesse sua Conta</h4>
-               <form class="modal-form" >
-                   <div class="">
-                       <label for="user">Usuario ou email</label>
-                       <input class="form-control" type="text" id="user" name="use"/>
-                   </div>
-                      <div class="">
-                       <label for="passw">Senha</label>
-                       <input class="form-control" type="password" id="passw" name="passw"/>
-                   </div>
-                   <span>Esqueci minha senha</span>
-                   <div class="modal-buttons">
-                       <button class="btn btn-sucess">Entrar</button>
-                       <button class="btn btn-sucess">
-                         <a id="criar_conta" style="color: white !important" ref="./cadastroUsuario.jsp">                                       
-                               Criar Conta
-                         </a>
-                       </button>                       
-                   </div>
-               </form>
-           </div>
-           
-       </header>
+         <jsp:include page="header1.jsp"/>
         <main class="home container">
-            <a href="./consultaLivros.jsp">Cadastros =></a>
             <form method="post" action="SalvarLivro" class="row g-3 formu">
+                    <a style="color:white !important;" 
+                                href="./consultaLivros.jsp"
+                                type="button"
+                                 style="margin-bottom: 16px; font-weight: bold" class="btn btn-primary"
+                      >
+                           Consultar Livros
+                    </a>
                 <h1 class="col-md-12">Cadastro de Livro</h1>
 
                 <div class="form-input col-md-6">
