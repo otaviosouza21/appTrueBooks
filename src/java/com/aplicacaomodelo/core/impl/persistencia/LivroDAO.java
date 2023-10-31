@@ -40,7 +40,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             connection.setAutoCommit(false);
 
             StringBuilder sql = new StringBuilder();
-            sql.append("INSERT INTO tab_livro (titulo, autor, descricao, tb_padrao, tb_promocao, quantidade) VALUES (?, ?, ?, ?, ?, ?)");
+            sql.append("INSERT INTO tab_livro (titulo, autor, descricao, tb_padrao, tb_promocao, quantidade, imagem) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
             pst = connection.prepareStatement(sql.toString(), Statement.RETURN_GENERATED_KEYS);
 
@@ -50,7 +50,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             pst.setDouble(4, li.getTb_padrao());
             pst.setDouble(5, li.getTb_promocao());
             pst.setInt(6, li.getQuantidade());
-
+           
             pst.executeUpdate();
 
             ResultSet rs = pst.getGeneratedKeys();
@@ -79,7 +79,7 @@ public class LivroDAO extends AbstractJdbcDAO {
             }
         }
     }
-
+    
     @Override
     public void alterar(EntidadeDominio entidade) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
@@ -168,5 +168,5 @@ public class LivroDAO extends AbstractJdbcDAO {
         }
 
         return livro;
-    }
+    }    
 }

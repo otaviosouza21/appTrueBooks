@@ -8,6 +8,7 @@ public class Livro extends EntidadeDominio{
     private double tb_padrao;
     private double tb_promocao;
     private int quantidade;
+    private byte[] imagem;
 
     public Livro() {
         
@@ -22,6 +23,14 @@ public class Livro extends EntidadeDominio{
         this.quantidade = quantidade;
     }
 
+    public byte[] getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(byte[] imagem) {
+        this.imagem = imagem;
+    }    
+    
     public String getTitulo() {
         return titulo;
     }

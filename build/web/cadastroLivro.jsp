@@ -1,72 +1,72 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
-    <!DOCTYPE html>
-    <!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <link rel="stylesheet" href="./bootstrap-4.0.0/css/bootstrap.css">
+        <link rel="stylesheet" href="./bootstrap-4.0.0/css/bootstrap.css">
         <script src="./bootstrap-4.0.0/js/bootstrap.js"></script>
         <link rel="stylesheet" href="./css/global.css">
         <link rel="stylesheet" href="./css/cadastroLivro.css">
-      
+
         <title>True Books</title>
     </head>
 
     <body>
-         <header class="header">
-                            <div class="header-rigth">
-                                <h1 class="logo">True Books</h1>
-                                <div class="header-search">
-                                    <img src="./img/search.svg" alt="">
-                                    <input type="text" name="" id="" placeholder="busque por qualquer livro">
-                                </div>
-                            </div>
-                            <nav class="nav">
-                                <ul class="nav-links">
-                                    <li><a href="./index.jsp">Home</a></li>
-                                    <li><a href="./cadastroLivro.jsp">Livros</a></li>
-                                    <li><a href="">Sobre</a></li>
-                                    <li>
-                                        <a>
-                                            <img src="./img/cart.svg" alt="Carrinho de Compras" srcset="">
-                                        </a>
-                                    </li>
-                                    <li class="login">
-                                        <a>
-                                            <img src="./img//user.svg" alt="Usuario" srcset="">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-           <div class="modal-login">
-               <h4>Acesse sua Conta</h4>
-               <form class="modal-form" >
-                   <div class="">
-                       <label for="user">Usuario ou email</label>
-                       <input class="form-control" type="text" id="user" name="use"/>
-                   </div>
-                      <div class="">
-                       <label for="passw">Senha</label>
-                       <input class="form-control" type="password" id="passw" name="passw"/>
-                   </div>
-                   <span>Esqueci minha senha</span>
-                   <div class="modal-buttons">
-                       <button class="btn btn-sucess">Entrar</button>
-                       <button class="btn btn-sucess">
-                         <a id="criar_conta" style="color: white !important" ref="./cadastroUsuario.jsp">                                       
-                               Criar Conta
-                         </a>
-                       </button>                       
-                   </div>
-               </form>
-           </div>
-           
-       </header>
+        <header class="header">
+            <div class="header-rigth">
+                <h1 class="logo">True Books</h1>
+                <div class="header-search">
+                    <img src="./img/search.svg" alt="">
+                    <input type="text" name="" id="" placeholder="busque por qualquer livro">
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="./index.jsp">Home</a></li>
+                    <li><a href="./cadastroLivro.jsp">Livros</a></li>
+                    <li><a href="">Sobre</a></li>
+                    <li>
+                        <a>
+                            <img src="./img/cart.svg" alt="Carrinho de Compras" srcset="">
+                        </a>
+                    </li>
+                    <li class="login">
+                        <a>
+                            <img src="./img//user.svg" alt="Usuario" srcset="">
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="modal-login">
+                <h4>Acesse sua Conta</h4>
+                <form class="modal-form" >
+                    <div class="">
+                        <label for="user">Usuario ou email</label>
+                        <input class="form-control" type="text" id="user" name="use"/>
+                    </div>
+                    <div class="">
+                        <label for="passw">Senha</label>
+                        <input class="form-control" type="password" id="passw" name="passw"/>
+                    </div>
+                    <span>Esqueci minha senha</span>
+                    <div class="modal-buttons">
+                        <button class="btn btn-sucess">Entrar</button>
+                        <button class="btn btn-sucess">
+                            <a id="criar_conta" style="color: white !important" ref="./cadastroUsuario.jsp">                                       
+                                Criar Conta
+                            </a>
+                        </button>                       
+                    </div>
+                </form>
+            </div>
+
+        </header>
         <main class="home container">
             <a href="./consultaLivros.jsp">Cadastros =></a>
-            <form method="post" action="SalvarLivro" class="row g-3 formu">
+            <form method="post" action="SalvarLivro" class="row g-3 formu" enctype="multipart/form-data">
                 <h1 class="col-md-12">Cadastro de Livro</h1>
 
                 <div class="form-input col-md-6">
@@ -107,9 +107,9 @@
                     var tb_padraoInput = document.getElementById("tb_padrao");
                     var tb_promocionalInput = document.getElementById("tb_promocao");
                     var promocaoCheckbox = document.getElementById("promocao");
-               
 
-                        
+
+
                     promocaoCheckbox.addEventListener("change", function () {
                         if (promocaoCheckbox.checked) {
                             tb_padraoInput.disabled = true;
@@ -119,8 +119,8 @@
                             tb_promocionalInput.disabled = true;
                         }
                     });
-                    
-         
+
+
                 </script>
 
             </form>
@@ -155,7 +155,7 @@
                 </ul>
             </nav>
         </footer>
-                <script src="./js/modalLogin.js"></script>
+        <script src="./js/modalLogin.js"></script>
     </body>
 
-    </html>
+</html>

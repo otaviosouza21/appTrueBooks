@@ -5,9 +5,11 @@ import com.aplicacaomodelo.domain.EntidadeDominio;
 import com.aplicacaomodelo.domain.Livro;
 import com.aplicacaomodelo.web.interfaces.IViewHelper;
 import java.io.IOException;
+import java.io.InputStream;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 public class LivroVH implements IViewHelper {
 
@@ -21,7 +23,7 @@ public class LivroVH implements IViewHelper {
             livro.setDescricao(request.getParameter("descricao"));
 
             String tb_padraoStr = request.getParameter("tb_padrao");
-            String tb_promocaoStr = request.getParameter("tb_promocao");       
+            String tb_promocaoStr = request.getParameter("tb_promocao");
             String quantidadeStr = request.getParameter("quantidade");
 
             double tb_padrao = 0.0;
