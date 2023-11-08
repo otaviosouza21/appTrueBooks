@@ -7,7 +7,7 @@
                                 <h1 class="logo">True Books</h1>
                                 <div class="header-search">
                                     <img src="./img/search.svg" alt="">
-                                    <input type="text" name="" id="" placeholder="busque por qualquer livro">
+                                    <input type="text" name="busca_livro" id="busca_livro" placeholder="busque por qualquer livro">
                                 </div>
                             </div>
                             <nav class="nav">

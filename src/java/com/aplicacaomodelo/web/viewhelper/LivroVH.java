@@ -21,7 +21,7 @@ public class LivroVH implements IViewHelper {
             livro.setDescricao(request.getParameter("descricao"));
 
             String tb_padraoStr = request.getParameter("tb_padrao");
-            String tb_promocaoStr = request.getParameter("tb_promocao");       
+            String tb_promocaoStr = request.getParameter("tb_promocao");
             String quantidadeStr = request.getParameter("quantidade");
 
             double tb_padrao = 0.0;
