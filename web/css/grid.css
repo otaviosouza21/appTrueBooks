@@ -42,5 +42,14 @@
 }
 
 .alter-img {
-    display: none;
+   display: flex;
+   gap:16px;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+}
+
+.alter-img img{
+    cursor: pointer;
+   
 }

@@ -5,7 +5,6 @@
 <%@ page import="com.aplicacaomodelo.domain.Livro" %>
 
 
-
     <!DOCTYPE html>
     <!DOCTYPE html>
     <html>
@@ -69,8 +68,12 @@
          <td>R$ <%= li.getTb_promocao() %></td>
          <td><%= li.getQuantidade() %></td>
          <td class="alter-img">
-             <img style="width:  30px" src="./img/trash.svg" alt="">
-            <img style="width:  30px" src="./img/edit.svg" alt="">
+             <a href="excluirLivro.jsp?id=<%= li.getId() %>" class="excluir-btn">
+                <img style="width:  30px" src="./img/trash.svg" alt="">
+             </a>
+              <a href="cadastroLivro.jsp?id=<%= li.getId() %>&editar=true" class="editar-btn">
+                  <img style="width:  30px" src="./img/edit.svg" alt="">
+              </a>
           </td>
      </tr>
       <% 

@@ -12,7 +12,7 @@ public class Conexao {
             SQLException{
         
         String driver = "org.postgresql.Driver";
-        String url = "jdbc:postgresql://localhost:5432/db_TrueBooks";
+        String url = "jdbc:postgresql://localhost:5433/db_TrueBooks";
         String user = "postgres";
         String password = "admin";
         Class.forName( driver );

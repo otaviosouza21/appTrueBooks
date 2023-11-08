@@ -1,4 +1,13 @@
+<%@page import="java.util.List"%>
+<%@page import="com.aplicacaomodelo.domain.EntidadeDominio"%>
+<%@page import="com.aplicacaomodelo.core.impl.persistencia.LivroDAO"%>
+<%@page import="com.aplicacaomodelo.domain.Livro"%>
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
+
+<% 
+boolean isEdicao = "true".equals(request.getParameter("editar"));
+%>
+
     <!DOCTYPE html>
     <!DOCTYPE html>
     <html>
@@ -17,7 +26,29 @@
     <body>
          <jsp:include page="header1.jsp"/>
         <main class="home container">
-            <form method="post" action="SalvarLivro" class="row g-3 formu">
+            
+    <%
+Livro livroParaEdicao = null;
+
+if (isEdicao) {
+    String livroId = request.getParameter("id");
+    
+    if (livroId != null) {
+        LivroDAO livroDAO = new LivroDAO();
+        List<EntidadeDominio> livros = livroDAO.consultar(new Livro());
+        
+        for (EntidadeDominio livro : livros) {
+            Livro li = (Livro) livro;
+            if (li.getId() == Integer.parseInt(livroId)) {
+                livroParaEdicao = li;
+                break; // Parar quando encontrar o livro
+            }
+        }
+    }
+}
+%>
+            
+            <form method="post" action="<%= isEdicao ? "AlterarLivro" : "SalvarLivro"%>" class="row g-3 formu">
                     <a style="color:white !important;" 
                                 href="./consultaLivros.jsp"
                                 type="button"
@@ -25,40 +56,46 @@
                       >
                            Consultar Livros
                     </a>
-                <h1 class="col-md-12">Cadastro de Livro</h1>
+                <h1 class="col-md-12"><%= isEdicao ? "Editar Livro" : "Cadastro de Livro"%></h1>
 
                 <div class="form-input col-md-6">
                     <label for="titulo">Titulo</label>
-                    <input placeholder="Titulo do livro" class="form-control" type="text" name="titulo" id="titulo">
+                   <input placeholder="Titulo do livro" value="<%= isEdicao ? livroParaEdicao.getTitulo() : "" %>" class="form-control" type="text" name="titulo" id="titulo">
+
+         
                 </div>
 
                 <div class="form-input col-md-6">
                     <label for="autor">Autor</label>
-                    <input placeholder="Autor do livro" class="form-control" type="text" name="autor" id="autor">
+                    <input placeholder="Autor do livro" value="<%= isEdicao ? livroParaEdicao.getAutor() : "" %>" class="form-control" type="text" name="autor" id="autor">
                 </div>
 
                 <div class="form-input col-md-12">
                     <label for="descricao">Descricao</label>
-                    <textarea class="form-control" placeholder="Uma breve descrição" style="resize: none;" name="descricao" id="descricao"></textarea>
+                    <textarea class="form-control"  placeholder="Uma breve descrição" style="resize: none;" name="descricao" id="descricao">
+                        <%= isEdicao ? livroParaEdicao.getDescricao(): "" %>
+                    </textarea>
                 </div>
 
                 <div class="form-input col-md-3">
                     <label for="tb_padrao">Tabela Padrão</label>
-                    <input placeholder="R$" class="form-control" type="text" name="tb_padrao" id="tb_padrao">
+                    <input placeholder="R$" class="form-control" value="<%= isEdicao ? livroParaEdicao.getTb_padrao(): "" %>" type="text" name="tb_padrao" id="tb_padrao">
                 </div>
 
                 <div class="form-input col-md-3">
                     <input type="checkbox" name="" id="promocao">
                     <label for="tb_promocao">Tabela Promoção</label>
-                    <input placeholder="R$" class="form-control" type="text" name="tb_promocao" id="tb_promocao">
+                    <input placeholder="R$" value="<%= isEdicao ? livroParaEdicao.getTb_promocao(): "" %>" class="form-control" type="text" name="tb_promocao" id="tb_promocao">
                 </div>
                 <div class="form-input col-md-4">
                     <label for="quantidade">Quantidade</label>
-                    <input placeholder="Quantidade em estoque" class="form-control" type="text" name="quantidade" id="quantidade">
+                    <input placeholder="Quantidade em estoque" value="<%= isEdicao ? livroParaEdicao.getQuantidade(): "" %>" class="form-control" type="text" name="quantidade" id="quantidade">
                 </div>
 
                 <div class="botao col-md-12">
-                    <button class="btn btn-success" type="submit" value="SALVAR" name="operacao" id="operacao">Cadastrar</button>
+                    <button class="btn btn-success" type="submit" value="<%= isEdicao ? "ALTERAR" : "SALVAR"%>" name="operacao" id="operacao">
+                         <%= isEdicao ? "Atualizar" : "Cadastrar" %>
+                    </button>
                 </div>
 
                 <script>

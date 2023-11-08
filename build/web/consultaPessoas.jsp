@@ -80,7 +80,9 @@
          <td><%= p.getCelular() %></td>
          <td><%= p.getComplemento() %></td>
          <td class="alter-img">
-             <img style="width:  30px" src="./img/trash.svg" alt="">
+            <a href="excluirPessoa.jsp?id=<%= p.getId() %>" class="excluir-btn">
+                <img style="width:  30px" src="./img/trash.svg" alt="">
+             </a>
             <img style="width:  30px" src="./img/edit.svg" alt="">
           </td>
      </tr>

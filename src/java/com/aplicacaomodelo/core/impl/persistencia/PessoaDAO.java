@@ -191,4 +191,42 @@ public class PessoaDAO extends AbstractJdbcDAO {
 
         return pessoa;
     }
+    
+        public void excluir(int idPessoa) throws SQLException {
+    if (connection == null) {
+        openConnection();
+    }
+    PreparedStatement pst = null;
+
+    try {
+        connection.setAutoCommit(false);
+
+        String sql = "DELETE FROM tab_pessoa WHERE id_pessoa = ?";
+        pst = connection.prepareStatement(sql);
+        pst.setInt(1, idPessoa);
+        pst.executeUpdate();
+
+        connection.commit();
+
+    } catch (SQLException e) {
+        try {
+            connection.rollback();
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        e.printStackTrace();
+    } finally {
+        try {
+            if (pst != null) {
+                pst.close();
+            }
+            if (connection != null && ctrlTransaction) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
 }

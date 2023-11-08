@@ -82,7 +82,51 @@ public class LivroDAO extends AbstractJdbcDAO {
 
     @Override
     public void alterar(EntidadeDominio entidade) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (connection == null) {
+            openConnection();
+        }
+        PreparedStatement pst = null;
+        Livro li = (Livro) entidade;
+
+        try {
+            connection.setAutoCommit(false);
+
+            StringBuilder sql = new StringBuilder();
+            sql.append("UPDATE tab_livro SET titulo = ?, autor = ?, descricao = ?, tb_padrao = ?, tb_promocao = ?, quantidade = ? WHERE id_livro = ?");
+
+            pst = connection.prepareStatement(sql.toString());
+
+            pst.setString(1, li.getTitulo());
+            pst.setString(2, li.getAutor());
+            pst.setString(3, li.getDescricao());
+            pst.setDouble(4, li.getTb_padrao());
+            pst.setDouble(5, li.getTb_promocao());
+            pst.setInt(6, li.getQuantidade());
+            if (li.getId() != null) {
+                pst.setInt(7, li.getId());
+            } else {
+                System.out.println("erro");
+            }
+
+            pst.executeUpdate();
+
+            connection.commit();
+
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+            e.printStackTrace();
+        } finally {
+            try {
+                pst.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
@@ -110,7 +154,6 @@ public class LivroDAO extends AbstractJdbcDAO {
                 li.setTb_padrao(rs.getDouble("tb_padrao"));
                 li.setTb_promocao(rs.getDouble("tb_promocao"));
                 li.setQuantidade(rs.getInt("quantidade"));
-                
 
                 livros.add(li);
             }
@@ -169,4 +212,42 @@ public class LivroDAO extends AbstractJdbcDAO {
 
         return livro;
     }
+
+    public void excluir(int idLivro) throws SQLException {
+        if (connection == null) {
+            openConnection();
+        }
+        PreparedStatement pst = null;
+
+        try {
+            connection.setAutoCommit(false);
+
+            String sql = "DELETE FROM tab_livro WHERE id_livro = ?";
+            pst = connection.prepareStatement(sql);
+            pst.setInt(1, idLivro);
+            pst.executeUpdate();
+
+            connection.commit();
+
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException e1) {
+                e1.printStackTrace();
+            }
+            e.printStackTrace();
+        } finally {
+            try {
+                if (pst != null) {
+                    pst.close();
+                }
+                if (connection != null && ctrlTransaction) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
 }

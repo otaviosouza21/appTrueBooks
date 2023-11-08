@@ -8,6 +8,7 @@
         <servlet-name>Servlet</servlet-name>
         <url-pattern>/SalvarPessoa</url-pattern>
         <url-pattern>/SalvarLivro</url-pattern>
+        <url-pattern>/AlterarLivro</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
