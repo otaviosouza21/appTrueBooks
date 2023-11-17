@@ -20,6 +20,7 @@ public class Livro extends EntidadeDominio{
         this.tb_padrao = tb_padrao;
         this.tb_promocao = tb_promocao;
         this.quantidade = quantidade;
+       
     }
 
     public String getTitulo() {

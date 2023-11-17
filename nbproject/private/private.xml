@@ -3,17 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/src/java/com/aplicacaomodelo/domain/EntidadeDominio.java</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/src/java/com/aplicacaomodelo/web/viewhelper/PessoaVH.java</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/web/consultaLivros.jsp</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/src/java/com/aplicacaomodelo/core/impl/persistencia/LivroDAO.java</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/src/java/com/aplicacaomodelo/core/impl/controle/Fachada.java</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/src/java/com/aplicacaomodelo/domain/Pessoa.java</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/src/java/com/aplicacaomodelo/core/aplicacao/Resultado.java</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/web/css/grid.css</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/web/consultaPessoas.jsp</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/src/java/com/aplicacaomodelo/core/impl/persistencia/PessoaDAO.java</file>
-            <file>file:/C:/Users/otavi/OneDrive/Documentos/AppTueBooks/appTrueBooks/src/java/com/aplicacaomodelo/web/viewhelper/LivroVH.java</file>
+            <file>file:/C:/Users/autologon/Desktop/AppTrueBooks/appTrueBooks/build/web/cadastroUsuario.jsp</file>
+            <file>file:/C:/Users/autologon/Desktop/AppTrueBooks/appTrueBooks/src/java/com/aplicacaomodelo/web/viewhelper/LivroVH.java</file>
+            <file>file:/C:/Users/autologon/Desktop/AppTrueBooks/appTrueBooks/web/cadastroLivro.jsp</file>
+            <file>file:/C:/Users/autologon/Desktop/AppTrueBooks/appTrueBooks/build/web/consultaPessoas.jsp</file>
+            <file>file:/C:/Users/autologon/Desktop/AppTrueBooks/appTrueBooks/build/web/cadastroLivro.jsp</file>
         </group>
     </open-files>
 </project-private>

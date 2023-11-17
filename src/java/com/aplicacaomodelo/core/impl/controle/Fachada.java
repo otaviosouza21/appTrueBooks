@@ -5,6 +5,7 @@
 package com.aplicacaomodelo.core.impl.controle;
 
 import com.aplicacaomodelo.core.aplicacao.Resultado;
+import com.aplicacaomodelo.core.impl.negocio.ValidarNomePessoa;
 import com.aplicacaomodelo.core.impl.persistencia.LivroDAO;
 import com.aplicacaomodelo.core.impl.persistencia.PessoaDAO;
 import com.aplicacaomodelo.core.interfaces.IDAO;
@@ -44,23 +45,42 @@ public class Fachada implements IFachada {
         daos = new HashMap<String, IDAO>();
         /* Intânciando o Map de Regras de Negócio */
         rns = new HashMap<String, Map<String, List<IStrategy>>>();
-        
+
         /* Criando instâncias dos DAOs a serem utilizados*/
         PessoaDAO pessoaDAO = new PessoaDAO();
         LivroDAO livroDAO = new LivroDAO();
-        
+
         daos.put(Pessoa.class.getName(), pessoaDAO);
         daos.put(Livro.class.getName(), livroDAO);
+        
+        //instancia o map de validacoes da entidade pessoa
+        Map<String, List<IStrategy>> rnsPessoa = new HashMap<>();
+        
+        // instancia a lista de validacoes especificas da operacoes de salvar
+        List <IStrategy> rnsSalvarPessoa =  new ArrayList<>();
+        
+             // instancia a validacao de nome da pessoa
+        ValidarNomePessoa validarNomePessoa = new ValidarNomePessoa();
+        
+          //Adiciona a validação de nome pessoa na lista de validacoes de salvar
+        rnsSalvarPessoa.add(validarNomePessoa);
+        
+   
+        //Mapeio a lista de validadacoes da operacoes de salvar
+        rnsPessoa.put("Salvar",rnsSalvarPessoa);
+        
+      //adiciona o mapa de validacoes da pessoa nos mapas de regra do negocio
+        rns.put(Pessoa.class.getName(), rnsPessoa);
     }
 
     @Override
     public Resultado salvar(EntidadeDominio entidade) {
         resultado = new Resultado();
-        String nmClasse = entidade.getClass().getName();	
+        String nmClasse = entidade.getClass().getName();
 
         String msg = executarRegras(entidade, "SALVAR");
-        
-        if(msg == null){
+
+        if (msg == null) {
             //IDAO dao = daos.get(nmClasse);
             IDAO dao = daos.get(nmClasse);
             try {
@@ -68,48 +88,44 @@ public class Fachada implements IFachada {
                 List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
-                
+
             } catch (SQLException e) {
-                
+
                 e.printStackTrace();
                 resultado.setMsg("Não foi possível realizar o registro!");
-                
+
             }
+        } else {
+            resultado.setMsg(msg);
         }
-        else{
-            resultado.setMsg(msg);	            
-        }
-        
+
         return resultado;
     }
 
     @Override
     public Resultado alterar(EntidadeDominio entidade) {
         resultado = new Resultado();
-        String nmClasse = entidade.getClass().getName();	
+        String nmClasse = entidade.getClass().getName();
 
         String msg = executarRegras(entidade, "ALTERAR");
-        
-        if(msg == null){
-            //IDAO dao = daos.get(nmClasse);
+
+        if (msg == null) {
             IDAO dao = daos.get(nmClasse);
+
             try {
                 dao.alterar(entidade);
-                List<EntidadeDominio> entidades = new ArrayList<EntidadeDominio>();
+                List<EntidadeDominio> entidades = new ArrayList<>();
                 entidades.add(entidade);
                 resultado.setEntidades(entidades);
-                
+
             } catch (SQLException e) {
-                
                 e.printStackTrace();
-                resultado.setMsg("Não foi possível realizar o registro!");
-                
+                resultado.setMsg("Não foi possível realizar a alteração!");
             }
+        } else {
+            resultado.setMsg(msg);
         }
-        else{
-            resultado.setMsg(msg);	            
-        }
-        
+
         return resultado;
     }
 
@@ -147,11 +163,11 @@ public class Fachada implements IFachada {
     @Override
     public Resultado visualizar(EntidadeDominio entidade) {
         resultado = new Resultado();
-        String nmClasse = entidade.getClass().getName();	
+        String nmClasse = entidade.getClass().getName();
 
         String msg = executarRegras(entidade, "VISUALIZAR");
-        
-        if(msg == null){
+
+        if (msg == null) {
             IDAO dao = daos.get(nmClasse);
 
             try {
@@ -163,7 +179,7 @@ public class Fachada implements IFachada {
                 resultado.setMsg("Não foi possível realizar a consulta!");
 
             }
-        }else{
+        } else {
             resultado.setMsg(msg);
         }
         return resultado;

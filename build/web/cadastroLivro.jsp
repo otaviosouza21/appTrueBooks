@@ -57,7 +57,14 @@ if (isEdicao) {
                            Consultar Livros
                     </a>
                 <h1 class="col-md-12"><%= isEdicao ? "Editar Livro" : "Cadastro de Livro"%></h1>
-
+                
+               
+                  <div class="form-input col-md-6">
+                    <label for="id_livro">ID</label>
+                   <input placeholder="Id do livro" value="<%= isEdicao ? livroParaEdicao.getId() : "" %>" class="form-control" type="text" name="id_livro" id="id_livro">
+                  </div>
+                
+                
                 <div class="form-input col-md-6">
                     <label for="titulo">Titulo</label>
                    <input placeholder="Titulo do livro" value="<%= isEdicao ? livroParaEdicao.getTitulo() : "" %>" class="form-control" type="text" name="titulo" id="titulo">

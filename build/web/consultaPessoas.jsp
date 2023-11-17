@@ -83,7 +83,9 @@
             <a href="excluirPessoa.jsp?id=<%= p.getId() %>" class="excluir-btn">
                 <img style="width:  30px" src="./img/trash.svg" alt="">
              </a>
-            <img style="width:  30px" src="./img/edit.svg" alt="">
+            <a href="cadastroUsuario.jsp?id=<%= p.getId() %>&editar=true" class="editar-btn">
+                  <img style="width:  30px" src="./img/edit.svg" alt="">
+            </a>
           </td>
      </tr>
       <% 

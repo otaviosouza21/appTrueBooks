@@ -9,6 +9,7 @@
         <url-pattern>/SalvarPessoa</url-pattern>
         <url-pattern>/SalvarLivro</url-pattern>
         <url-pattern>/AlterarLivro</url-pattern>
+         <url-pattern>/AlterarPessoa</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
