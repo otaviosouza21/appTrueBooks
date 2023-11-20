@@ -56,7 +56,8 @@ public class Servlet extends HttpServlet {
          */
         vhs.put("/AplicacaoModelo/SalvarPessoa", new PessoaVH());
         vhs.put("/AplicacaoModelo/SalvarLivro", new LivroVH());
-         vhs.put("/AplicacaoModelo/AlterarLivro", new LivroVH());
+        vhs.put("/AplicacaoModelo/AlterarLivro", new LivroVH());
+          vhs.put("/AplicacaoModelo/AlterarPessoa", new PessoaVH());
 
     }
 

@@ -26,7 +26,8 @@ public class PessoaVH implements IViewHelper {
         //Obtêm a operação executada
         String operacao = request.getParameter("operacao");
         Pessoa pessoa = new Pessoa();
-        if (operacao.equals("SALVAR")) {
+        if (operacao.equals("SALVAR") || operacao.equals("ALTERAR")) {
+             pessoa.setId(Integer.parseInt(request.getParameter("id_pessoa")));
             pessoa.setNome_comp(request.getParameter("nome_comp"));
             pessoa.setEmail(request.getParameter("email"));
             pessoa.setEndereco(request.getParameter("endereco"));
@@ -47,6 +48,21 @@ public class PessoaVH implements IViewHelper {
             pessoa.setEstado(request.getParameter("estado"));
         }
 
+        
+        if (operacao.equals("ALTERAR")) {
+            // Se for operação de alteração, configure também o ID do livro
+            String pessoaId = request.getParameter("id");
+            if (pessoaId != null && !pessoaId.isEmpty()) {
+                try {
+                    pessoa.setId(Integer.parseInt(pessoaId));
+                } catch (NumberFormatException e) {
+                    // Tratamento para valor de ID inválido
+                }
+            }
+        }
+
+    
+        
         return pessoa;
 
     }

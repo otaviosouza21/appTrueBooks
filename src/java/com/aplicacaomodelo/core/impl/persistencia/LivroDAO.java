@@ -102,10 +102,16 @@ public class LivroDAO extends AbstractJdbcDAO {
             pst.setDouble(4, li.getTb_padrao());
             pst.setDouble(5, li.getTb_promocao());
             pst.setInt(6, li.getQuantidade());
-            if (li.getId() != null) {
-                pst.setInt(7, li.getId());
+
+            Integer id = li.getId();
+            if (id != null) {
+                pst.setInt(7, id.intValue());
             } else {
-                System.out.println("erro");
+                // Trate a situação em que o ID é nulo
+                // Aqui você pode lançar uma exceção, imprimir uma mensagem ou fazer o que for apropriado para o seu caso.
+                System.out.println("ID do livro é nulo.");
+                // Ou você pode simplesmente retornar sem executar a atualização, dependendo do comportamento desejado.
+                return;
             }
 
             pst.executeUpdate();
@@ -127,6 +133,7 @@ public class LivroDAO extends AbstractJdbcDAO {
                 e.printStackTrace();
             }
         }
+
     }
 
     @Override
